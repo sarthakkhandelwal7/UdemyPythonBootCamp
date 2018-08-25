@@ -2,18 +2,28 @@
 
 class Factors:
     def __init__(self,number):
-        self.number=number
         self.count = 0
         self.prime_factors_list = []
-    def check_factors(self):
-        for i in range(1,self.number):
-            if(number%i==0):
+    def returns_factors(self,num):
+        """
+            This function finds factor of the given number and pass that factor to 'returns_prime_factors()' function
+            Variables: 
+            'num' stores user input 
+            'i' is used in for loop
+            'prime' stores the prime numbers returned form 'returns_prime_factors()' function  
+        """
+        for i in range(1,num):
+            if(num%i==0):
                 prime=self.prime_factors(i)
                 if (prime!= None):
                     self.prime_factors_list.append(prime)
                 
-    def prime_factors(self,factor):
-        
+    def returns_prime_factors(self,factor):
+        """
+            Returns the prime factor by counting the number of factors of current factor of the number 
+            Variables:
+            'count' count number of divisors of factor 
+        """
         if(factor%2!=0):
             for y in range(2,factor):
                 if factor%y==0:
@@ -25,11 +35,10 @@ class Factors:
         elif(factor==2):
             return factor
 another = True
-factors=Factors(number)
+factors=Factors()
 while another:
     number=int(input("Please enter a number:"))
-    
-    factors.check_factors()
+    factors.check_factors(number)
     print(f'Prime factors are {factors.prime_factors_list}')
     another=input("Do you wanna check another number press y or n:")
     if another[0].lower()=='y':
