@@ -1,43 +1,49 @@
+import pdb
 class BinaryDecimalConverter:
-    def __init_(self):
+    def __init__(self):
         self.binary_form = 0
         self.decimal_form = 0
     
     def convert_to_binary(self):
+        self.binary_form = 0
         """
             Variables:
             'power' to store power of 2
             'binary_form' to store conversion
         """
         number = int(input("Enter number for conversion:"))
-        for i in range(number):
-            if (2 ** i > 0):
-                power = i-1
+        for x in range(0,number):
+            if (2 ** x > number):
+                power = x-1
                 break
 
-            elif (2 ** i == number):
-                self.convert_to_binary(i.number)
+            elif (2 ** x == number):
+                power = x
                 break
         divident = number
-        while power<=0:
+        while power>=0:
             self.binary_form+=(10**power)*(int(divident/(2**power)))
+            
             divident = divident%2**power
             power-=1
     
     def convert_to_decimal(self):
+        self.decimal_form = 0
         """
             Variables:
             'decimal_form' to store conversion
+            'rou' to solve the problem of decimal
         """
         binary_number = int(input("Enter binary number"))
         bi = binary_number
-        power = len(binary_number)
-        for i in range(power):
+        power = len(str(binary_number))
+        for i in range(0,power):
             bi/=10
-            self.decimal_form += (2**i)*((bi-int(bi))*10)
+            rou = round((bi-int(bi))*10)
+            self.decimal_form += (2**i)*(rou)           
             bi = int(bi)
 ask = 'y'
-calculator=BinaryDecimalConverter()
+converter=BinaryDecimalConverter()
 while ask=='y':
     print("Welcome")
     print("To convert decimal to binary press 1")
@@ -47,11 +53,13 @@ while ask=='y':
     except:
         print("Enter correct choice")
         ask = input("Want to converter again y/n:")
-        continue
-    if choice==1:
-        calculator.gets_power_of_two()
-        print(calculator.binary_form)
     else:
-        calculator.convert_to_binary()
-        print(calculator.decimal_form)
+         if choice==1:
+            converter.convert_to_binary()
+            print(converter.binary_form)
+         elif(choice!=1 and choice!=2):
+            print('Enter correct choice')
+         else:
+            converter.convert_to_decimal()
+            print(converter.decimal_form)
     ask = input("Want to converter again y/n:")
