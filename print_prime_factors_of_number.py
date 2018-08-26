@@ -1,7 +1,7 @@
 #Have the user enter a number and find all Prime Factors (if there are any) and display them.
 
 class Factors:
-    def __init__(self,number):
+    def __init__(self):
         self.count = 0
         self.prime_factors_list = []
     def returns_factors(self,num):
@@ -14,7 +14,7 @@ class Factors:
         """
         for i in range(1,num):
             if(num%i==0):
-                prime=self.prime_factors(i)
+                prime=self.returns_prime_factors(i)
                 if (prime!= None):
                     self.prime_factors_list.append(prime)
                 
@@ -38,7 +38,7 @@ another = True
 factors=Factors()
 while another:
     number=int(input("Please enter a number:"))
-    factors.check_factors(number)
+    factors.returns_factors(number)
     print(f'Prime factors are {factors.prime_factors_list}')
     another=input("Do you wanna check another number press y or n:")
     if another[0].lower()=='y':
