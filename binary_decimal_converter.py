@@ -4,6 +4,11 @@ class BinaryDecimalConverter:
         self.decimal_form = 0
     
     def convert_to_binary(self):
+        """
+            Variables:
+            'power' to store power of 2
+            'binary_form' to store conversion
+        """
         number = int(input("Enter number for conversion:"))
         for i in range(number):
             if (2 ** i > 0):
@@ -20,9 +25,13 @@ class BinaryDecimalConverter:
             power-=1
     
     def convert_to_decimal(self):
+        """
+            Variables:
+            'decimal_form' to store conversion
+        """
         binary_number = int(input("Enter binary number"))
         bi = binary_number
-        power = length(binary_number)
+        power = len(binary_number)
         for i in range(power):
             bi/=10
             self.decimal_form += (2**i)*((bi-int(bi))*10)
