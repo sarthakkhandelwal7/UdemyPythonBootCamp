@@ -2,7 +2,6 @@
 and BusinessAccount. Manage credits and debits from these accounts through an ATM style program."""
 pin = 7189
 class BankAccountManager():
-	"""docstring for ClassName"""
 	def __init__(self):
 		self.debit_amount = 0
 		self.credit_amount = 0
