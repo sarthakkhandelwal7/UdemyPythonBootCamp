@@ -13,5 +13,5 @@ def return_def(word_predicted,word):
             print(f'Are you trying to type {word_predicted[0]}')
     else:
         print('Please enter a correct word')
-word_predicted = get_close_matches(word,data.keys(),n=1,cutoff = .7)
+word_predicted = get_close_matches(word,data.keys(),n=1,cutoff = .750)
 return_def(word_predicted,word)
