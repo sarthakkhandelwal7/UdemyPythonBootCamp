@@ -15,7 +15,6 @@ def return_def(word_predicted,word):
     else:
         print('Please enter a correct word')
         
-
 while ask.lower() == 'y':
     word = input('Please enter a word: ')
     word = word.lower()
